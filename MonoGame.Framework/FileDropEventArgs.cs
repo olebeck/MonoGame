@@ -9,7 +9,7 @@ namespace Microsoft.Xna.Framework
     /// <summary>
     /// This class is used in the <see cref="GameWindow.FileDrop"/> event as <see cref="EventArgs"/>.
     /// </summary>
-    public struct FileDropEventArgs
+    public class FileDropEventArgs : EventArgs
     {
         /// <summary>
         /// Creates an instance of <see cref="FileDropEventArgs"/>.

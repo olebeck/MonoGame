@@ -13,7 +13,7 @@ namespace Microsoft.Xna.Framework.Input.Touch
     /// <summary>
     /// Provides methods and properties for interacting with a touch location on a touch screen device.
     /// </summary>
-    public struct TouchLocation : IEquatable<TouchLocation>
+    public class TouchLocation : EventArgs
     {
 		/// <summary>
 		///Attributes 
@@ -122,6 +122,10 @@ namespace Microsoft.Xna.Framework.Input.Touch
         /// <inheritdoc cref="TouchLocation(int, TouchLocationState, Vector2, TouchLocationState, Vector2)"/>
         public TouchLocation(int id, TouchLocationState state, Vector2 position)
             : this(id, state, position, TouchLocationState.Invalid, Vector2.Zero)
+        {
+        }
+
+        public TouchLocation()
         {
         }
 
@@ -297,6 +301,7 @@ namespace Microsoft.Xna.Framework.Input.Touch
         /// <param name="aPreviousLocation">Previous location data, as a <see cref="TouchLocation"/>.</param>
         public bool TryGetPreviousLocation(out TouchLocation aPreviousLocation)
         {
+            aPreviousLocation = this;
 			if (_previousState == TouchLocationState.Invalid)
 			{
 				aPreviousLocation._id = -1;

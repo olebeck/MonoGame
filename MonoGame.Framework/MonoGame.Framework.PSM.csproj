@@ -1,0 +1,117 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netframework4.0</TargetFramework>
+    <DefineConstants>PSM</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <MGOpenGL>GLES</MGOpenGL>
+    <Description>The MonoGame runtime for PSM.</Description>
+    <PackageId>MonoGame.Framework.PSMobile</PackageId>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**\*" />
+    <Compile Remove="obj\**\*" />
+    <Compile Remove="Platform\**\*" />
+    <Compile Remove="Properties\**\*" />
+    <Compile Remove="Utilities\System.Numerics.Vectors\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Platform\**\*" />
+    <None Remove="Utilities\System.Numerics.Vectors\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Platform\PSM\Devices\Sensors\Accelerometer.cs" />
+    <Compile Include="Platform\PSM\Devices\Sensors\AccelerometerCapabilities.cs" />
+    <Compile Include="Platform\PSM\Devices\Sensors\AccelerometerState.cs" />
+    <Compile Include="Platform\PSM\PSSGamePlatform.cs" />
+    <Compile Include="Platform\PSM\PSSGameWindow.cs" />
+
+    <Compile Include="Platform\Audio\Xact\WaveBank.Default.cs" />
+    <Compile Include="Platform\GamePlatform.Mobile.cs" />
+
+    <Compile Include="Platform\Graphics\GraphicsDevice.PSM.cs" />
+    <Compile Include="Platform\Graphics\GraphicsDebug.Default.cs" />
+    <Compile Include="Platform\Graphics\GraphicsAdapter.PSM.cs" />
+    <Compile Include="Platform\Graphics\GraphicsCapabilities.PSM.cs" />
+    <Compile Include="Platform\Graphics\Texture.PSM.cs" />
+    <Compile Include="Platform\Graphics\Texture2D.PSM.cs" />
+    <Compile Include="Platform\Graphics\Texture3D.PSM.cs" />
+    <Compile Include="Platform\Graphics\TextureCollection.PSM.cs" />
+    <Compile Include="Platform\Graphics\TextureCube.PSM.cs" />
+    <Compile Include="Platform\Graphics\RenderTarget2D.PSM.cs" />
+    <Compile Include="Platform\Graphics\RenderTarget3D.PSM.cs" />
+    <Compile Include="Platform\Graphics\RenderTargetCube.PSM.cs" />
+    <Compile Include="Platform\Graphics\SamplerStateCollection.PSM.cs" />
+    <Compile Include="Platform\Graphics\Shader\ShaderProgramCache.cs" />
+    <Compile Include="Platform\Graphics\Shader\ConstantBuffer.PSM.cs" />
+    <Compile Include="Platform\Graphics\Shader\Shader.PSM.cs" />
+    <Compile Include="Platform\Graphics\States\BlendState.PSM.cs" />
+    <Compile Include="Platform\Graphics\States\DepthStencilState.PSM.cs"/>
+    <Compile Include="Platform\Graphics\States\RasterizerState.PSM.cs"/>
+    <Compile Include="Platform\Graphics\Vertices\IndexBuffer.PSM.cs" />
+    <Compile Include="Platform\Graphics\Vertices\VertexBuffer.PSM.cs" />
+    <Compile Include="Platform\Graphics\Vertices\VertexDeclaration.PSM.cs" />
+    <Compile Include="Platform\Graphics\Effect\EffectResource.PSM.cs"/>
+    <Compile Include="Platform\Graphics\PSSHelper.cs" />
+    <Compile Include="Platform\Graphics\OcclusionQuery.Null.cs" />
+    <Compile Include="Platform\PSM\PSSExtensions.cs" />
+
+    <Compile Include="Platform\PSM\Vector.cs" />
+    <!--
+    <Compile Include="Platform\PSM\Extension.cs" />
+    <Compile Include="Platform\PSM\Task.cs" />
+    <Compile Include="Platform\PSM\Action.cs" />
+    -->
+
+    <Compile Include="Platform\Input\GamePad.PSM.cs" />
+    <Compile Include="Platform\Input\Joystick.Default.cs" />
+    <Compile Include="Platform\Input\Keyboard.PSM.cs" />
+    <Compile Include="Platform\Input\KeyboardInput.Default.cs" />
+    <Compile Include="Platform\Input\MessageBox.Default.cs" />
+    <Compile Include="Platform\Input\Mouse.Default.cs" />
+    <Compile Include="Platform\Input\MouseCursor.Default.cs" />
+    <Compile Include="Platform\Audio\Microphone.Default.cs" />
+    <Compile Include="Platform\Audio\SoundEffect.PSM.cs" />
+    <Compile Include="Platform\Audio\SoundEffectInstance.PSM.cs" />
+    <Compile Include="Platform\Audio\DynamicSoundEffectInstance.PSM.cs" />
+    <Compile Include="Platform\Media\MediaPlayer.Default.cs" />
+    <Compile Include="Platform\Media\MediaLibrary.Default.cs" />
+    <Compile Include="Platform\Media\Song.PSM.cs" />
+    <Compile Include="Platform\Media\Video.Default.cs" />
+    <Compile Include="Platform\Media\VideoPlayer.Default.cs" />
+    <Compile Include="Platform\TitleContainer.PSM.cs" />
+    <Compile Include="Platform\Utilities\InteropHelpers.cs" />
+    <Compile Include="Platform\Utilities\ReflectionHelpers.Legacy.cs" />
+  </ItemGroup> 
+
+  <ItemGroup>
+    <Reference Include="Sce.PlayStation.Core">
+      <HintPath>C:\Program Files (x86)\SCE\PSM\mono\lib\psm\Sce.PlayStation.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ShaderProgram Include="Platform\Graphics\Effect\Resource\AlphaTestEffect.fcg" />
+    <ShaderProgram Include="Platform\Graphics\Effect\Resource\AlphaTestEffect.vcg" />
+    <ShaderProgram Include="Platform\Graphics\Effect\Resource\BasicEffect.fcg" />
+    <ShaderProgram Include="Platform\Graphics\Effect\Resource\BasicEffect.vcg" />
+    <ShaderProgram Include="Platform\Graphics\Effect\Resource\SpriteEffect.fcg" />
+    <ShaderProgram Include="Platform\Graphics\Effect\Resource\SpriteEffect.vcg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
+  </ItemGroup>
+</Project>

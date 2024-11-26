@@ -53,6 +53,9 @@ namespace Microsoft.Xna.Framework.Input.Touch
                     maximumTouchCount = 5;
                 else //Pad
                     maximumTouchCount = 11;
+#elif PSM
+                isConnected = true;
+                maximumTouchCount = 2; //TODO: This number is made up, needs to be tested on Vita
 #else
                 //Touch isn't implemented in OpenTK, so no linux or mac https://github.com/opentk/opentk/issues/80
                 isConnected = false;

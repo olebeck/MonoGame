@@ -82,6 +82,20 @@ namespace Microsoft.Xna.Framework
             }
         }
 
+#if PSM
+        private PSSGameWindow _window;
+        public PSSGameWindow Window
+        {
+            get { return _window; }
+            protected set
+            {
+                if (_window == null)
+                    TouchPanel.PrimaryWindow = value;
+
+                _window = value;
+            }
+        }
+#else
         private GameWindow _window;
         public GameWindow Window
         {
@@ -99,6 +113,7 @@ namespace Microsoft.Xna.Framework
                 _window = value;
             }
         }
+#endif
 
         #endregion
 

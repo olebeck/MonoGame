@@ -404,7 +404,11 @@ namespace Microsoft.Xna.Framework.Graphics
         /// </summary>
         void CacheEffectParameters(BasicEffect cloneSource)
         {
-            textureParam                = Parameters["Texture"];
+            #if !PSM
+                textureParam                = Parameters["Texture"];
+            #else
+                textureParam                = Parameters["Texture0"];
+            #endif
             diffuseColorParam           = Parameters["DiffuseColor"];
             emissiveColorParam          = Parameters["EmissiveColor"];
             specularColorParam          = Parameters["SpecularColor"];
@@ -490,6 +494,10 @@ namespace Microsoft.Xna.Framework.Graphics
                 }
 
                 dirtyFlags &= ~EffectDirtyFlags.ShaderIndex;
+#if PSM
+#warning Major hack as PSM Shaders don't support multiple Techinques (yet)
+                shaderIndex = 0;
+#endif
 
                 CurrentTechnique = Techniques[shaderIndex];
             }

@@ -43,37 +43,52 @@ namespace Microsoft.Xna.Framework.Graphics
 
         public string ToShaderSemantic()
         {
+            var prefix = ""; // $ strings are c# 6
             switch (usage)
             {
                 case VertexElementUsage.Position:
-                    return $"POSITION{index}";
+                    prefix = "POSITION";
+                    break;
                 case VertexElementUsage.Color:
-                    return $"COLOR{index}";
+                    prefix = "COLOR";
+                    break;
                 case VertexElementUsage.Normal:
-                    return $"NORMAL{index}";
+                    prefix = "NORMAL";
+                    break;
                 case VertexElementUsage.TextureCoordinate:
-                    return $"TEXCOORD{index}";
+                    prefix = "TEXCOORD";
+                    break;
                 case VertexElementUsage.BlendIndices:
-                    return $"BLENDINDICES{index}";
+                    prefix = "BLENDINDICES";
+                    break;
                 case VertexElementUsage.BlendWeight:
-                    return $"BLENDWEIGHT{index}";
+                    prefix = "BLENDWEIGHT";
+                    break;
                 case VertexElementUsage.Binormal:
-                    return $"BINORMAL{index}";
+                    prefix = "BINORMAL";
+                    break;
                 case VertexElementUsage.Tangent:
-                    return $"TANGENT{index}";
+                    prefix = "TANGENT";
+                    break;
                 case VertexElementUsage.PointSize:
-                    return $"PSIZE{index}";
+                    prefix = "PSIZE";
+                    break;
                 case VertexElementUsage.Depth:
-                    return $"DEPTH{index}";
+                    prefix = "DEPTH";
+                    break;
                 case VertexElementUsage.Fog:
-                    return $"FOG{index}";
+                    prefix = "FOG";
+                    break;
                 case VertexElementUsage.Sample: // Huh?  What is this?
-                    return $"SAMPLE{index}";
+                    prefix = "SAMPLE";
+                    break;
                 case VertexElementUsage.TessellateFactor:
-                    return $"TESSELLATEFACTOR{index}";
+                    prefix = "TESSELLATEFACTOR";
+                    break;
                 default:
                     throw new NotSupportedException("Unknown vertex element usage!");
             }
+            return prefix + index.ToString();
         }
     }
 

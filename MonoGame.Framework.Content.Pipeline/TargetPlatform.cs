@@ -57,6 +57,13 @@ namespace Microsoft.Xna.Framework.Content.Pipeline
         NativeClient,
 
         /// <summary>
+        /// Sony PlayStation Mobile (PS Vita)
+        /// (MonoGame)
+        /// </summary>
+        PlayStationMobile,
+
+
+        /// <summary>
         /// Raspberry Pi
         /// (MonoGame)
         /// </summary>

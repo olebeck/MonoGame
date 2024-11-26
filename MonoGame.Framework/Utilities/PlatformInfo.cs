@@ -24,6 +24,8 @@ namespace MonoGame.Framework.Utilities
                 return MonoGamePlatform.iOS;
 #elif TVOS
                 return MonoGamePlatform.tvOS;
+#elif PSM
+                return MonoGamePlatform.PSM;
 #elif WEB
                 return MonoGamePlatform.WebGL;
 #elif WINDOWS && DIRECTX
@@ -53,6 +55,8 @@ namespace MonoGame.Framework.Utilities
                 return GraphicsBackend.DirectX;
 #elif OPENGL
                 return GraphicsBackend.OpenGL;
+#elif PSM
+                return GraphicsBackend.PSM;
 #else
                 return PlatformGetGraphicsBackend();
 #endif

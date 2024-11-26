@@ -35,6 +35,7 @@ We support a growing list of platforms across the desktop, mobile, and console s
 * Mobile/Tablet Devices
   * Android 6.0 and up (OpenGL)
   * iPhone/iPad 10.0 and up (OpenGL)
+* [PlayStation Mobile](https://psm.playstation.net/portal/en/index.html) (currently 2D only)
 * [Consoles (for registered developers)](https://docs.monogame.net/articles/console_access.html)
   * PlayStation 4
   * PlayStation 5

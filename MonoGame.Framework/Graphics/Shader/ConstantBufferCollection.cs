@@ -2,6 +2,10 @@
 // This file is subject to the terms and conditions defined in
 // file 'LICENSE.txt', which is part of this source code package.
 
+#if PSM
+using Sce.PlayStation.Core.Graphics;
+#endif
+
 namespace Microsoft.Xna.Framework.Graphics
 {
     internal sealed class ConstantBufferCollection
@@ -51,7 +55,7 @@ namespace Microsoft.Xna.Framework.Graphics
 
 #if WEB
         internal void SetConstantBuffers(GraphicsDevice device, int shaderProgram)
-#elif OPENGL
+#elif OPENGL || PSM
         internal void SetConstantBuffers(GraphicsDevice device, ShaderProgram shaderProgram)
 #else
         internal void SetConstantBuffers(GraphicsDevice device)
@@ -68,7 +72,9 @@ namespace Microsoft.Xna.Framework.Graphics
                 var buffer = _buffers[i];
                 if (buffer != null && !buffer.IsDisposed)
                 {
-#if OPENGL || WEB
+#if DIRECTX
+                    buffer.PlatformApply(device, _stage, i);
+#elif OPENGL || PSM || WEB
                     buffer.PlatformApply(device, shaderProgram);
 #else
                     buffer.PlatformApply(device, _stage, i);

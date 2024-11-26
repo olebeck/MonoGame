@@ -25,6 +25,11 @@ namespace MonoGame.Framework.Utilities
         tvOS,
 
         /// <summary>
+        /// MonoGame PSM platform.
+        /// </summary>
+        PSM,
+
+        /// <summary>
         /// MonoGame cross platform desktop OpenGL platform.
         /// </summary>
         DesktopGL,

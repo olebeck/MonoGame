@@ -20,6 +20,11 @@ namespace MonoGame.Framework.Utilities
         OpenGL,
 
         /// <summary>
+        /// Represents the PSM graphics backend.
+        /// </summary>
+        PSM,
+
+        /// <summary>
         /// Represents the Vulkan graphics backend.
         /// </summary>
         Vulkan,
