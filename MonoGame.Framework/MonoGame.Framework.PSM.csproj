@@ -1,15 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="4.0">
   <PropertyGroup>
     <TargetFramework>netframework4.0</TargetFramework>
     <DefineConstants>PSM</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <MGOpenGL>GLES</MGOpenGL>
     <Description>The MonoGame runtime for PSM.</Description>
     <PackageId>MonoGame.Framework.PSMobile</PackageId>
     <LangVersion>5</LangVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="bin\**\*" />
     <Compile Remove="obj\**\*" />
@@ -50,12 +48,12 @@
     <Compile Include="Platform\Graphics\Shader\ConstantBuffer.PSM.cs" />
     <Compile Include="Platform\Graphics\Shader\Shader.PSM.cs" />
     <Compile Include="Platform\Graphics\States\BlendState.PSM.cs" />
-    <Compile Include="Platform\Graphics\States\DepthStencilState.PSM.cs"/>
-    <Compile Include="Platform\Graphics\States\RasterizerState.PSM.cs"/>
+    <Compile Include="Platform\Graphics\States\DepthStencilState.PSM.cs" />
+    <Compile Include="Platform\Graphics\States\RasterizerState.PSM.cs" />
     <Compile Include="Platform\Graphics\Vertices\IndexBuffer.PSM.cs" />
     <Compile Include="Platform\Graphics\Vertices\VertexBuffer.PSM.cs" />
     <Compile Include="Platform\Graphics\Vertices\VertexDeclaration.PSM.cs" />
-    <Compile Include="Platform\Graphics\Effect\EffectResource.PSM.cs"/>
+    <Compile Include="Platform\Graphics\Effect\EffectResource.PSM.cs" />
     <Compile Include="Platform\Graphics\PSSHelper.cs" />
     <Compile Include="Platform\Graphics\OcclusionQuery.Null.cs" />
     <Compile Include="Platform\PSM\PSSExtensions.cs" />
@@ -86,7 +84,7 @@
     <Compile Include="Platform\TitleContainer.PSM.cs" />
     <Compile Include="Platform\Utilities\InteropHelpers.cs" />
     <Compile Include="Platform\Utilities\ReflectionHelpers.Legacy.cs" />
-  </ItemGroup> 
+  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Sce.PlayStation.Core">
@@ -96,12 +94,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ShaderProgram Include="Platform\Graphics\Effect\Resource\AlphaTestEffect.fcg" />
-    <ShaderProgram Include="Platform\Graphics\Effect\Resource\AlphaTestEffect.vcg" />
-    <ShaderProgram Include="Platform\Graphics\Effect\Resource\BasicEffect.fcg" />
-    <ShaderProgram Include="Platform\Graphics\Effect\Resource\BasicEffect.vcg" />
-    <ShaderProgram Include="Platform\Graphics\Effect\Resource\SpriteEffect.fcg" />
-    <ShaderProgram Include="Platform\Graphics\Effect\Resource\SpriteEffect.vcg" />
+    <EmbeddedShaderProgram Include="Platform\Graphics\Effect\Resource\AlphaTestEffect.fcg" />
+    <EmbeddedShaderProgram Include="Platform\Graphics\Effect\Resource\AlphaTestEffect.vcg" />
+    <EmbeddedShaderProgram Include="Platform\Graphics\Effect\Resource\BasicEffect.fcg" />
+    <EmbeddedShaderProgram Include="Platform\Graphics\Effect\Resource\BasicEffect.vcg" />
+    <EmbeddedShaderProgram Include="Platform\Graphics\Effect\Resource\SpriteEffect.fcg" />
+    <EmbeddedShaderProgram Include="Platform\Graphics\Effect\Resource\SpriteEffect.vcg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -111,7 +109,16 @@
     </PackageReference>
   </ItemGroup>
 
+  <!--
+  <ItemGroup>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>../ThirdParty/microsoft.bcl.async/net40/Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  -->
+
   <ItemGroup>
     <PackageReference Include="Microsoft.Bcl.Async" Version="1.0.168" />
   </ItemGroup>
+
 </Project>
